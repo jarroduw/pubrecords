@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>         <html lang="en-US" class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8"/>
+  <script>
+   window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"b5b353e6a9","applicationID":"335721473","transactionName":"cwkPEUdWCV5RFB9DUlcDEkpdWAtWWANvQF9FAQ==","queueTime":5,"applicationTime":278,"agent":""}
+  </script>
+  <script>
+   (window.NREUM||(NREUM={})).loader_config={licenseKey:"b5b353e6a9",applicationID:"335721473"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);
+  </script>
+  <title>
+   School Reopening Committee - Monroe School District
+  </title>
+  <link href="/uploaded/favicon.ico" rel="icon"/>
+  <meta content="School Reopening Committee - Monroe School District" name="description"/>
+  <meta content="School Reopening Committee, Monroe School District" name="keywords"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <link href="https://www.monroe.wednet.edu/community/committees/school-reopening-committee" rel="canonical"/>
+  <meta content="https://www.monroe.wednet.edu/community/committees/school-reopening-committee" property="og:url"/>
+  <meta content="School Reopening Committee - Monroe School District" property="og:description"/>
+  <meta content="School Reopening Committee - Monroe School District" property="og:title"/>
+  <meta content="website" property="og:type"/>
+  <link href="/assets/application-850438c5b1d6cfdd8a25a369fc59360105d6f8753604167f9ab337162209de2f.css" media="all" rel="stylesheet">
+   <!-- CF Styles Manager -->
+   <link href="/styles.cfm?b" media="screen" rel="stylesheet"/>
+   <link href="/uploaded/themes/monroewa-theme/css/main.css?1588619414" media="all" rel="stylesheet">
+    <link href="/uploaded/themes/monroewa-theme/css/support-custom.css?1588619414" media="all" rel="stylesheet">
+     <script src="/assets/in_layout_head-0eed64654350067b6c4d5c39bc8989840865b81b879aebe0dddb2ea80fa1c6f9.js">
+     </script>
+     <script src="https://use.typekit.net/you1avv.js">
+     </script>
+     <script>
+      try{Typekit.load({ async: true });}catch(e){}
+     </script>
+     <link href="https://fonts.googleapis.com/css?family=Cabin:400,600,700" rel="stylesheet"/>
+     <script type="text/javascript">
+      (function(window) {
+			window.FS.currentPage = {
+				dateFormat: 'md',
+				homepageVideoOptimization: true,
+				timeFormat: '12'
+			};
+		})(window);
+     </script>
+     <script async="" src="/cdn-cgi/bm/cv/2172558837/api.js">
+     </script>
+    </link>
+   </link>
+  </link>
+ </head>
+ <body class="fsLiveMode fsHasHeader fsHasLeftBanner fsHasMenu fsHasFooter fsHasOneColumnLayout fsSection203 fsHasTheme3 district" data-lazy-load-media="false" data-logged-in="false" data-pageid="2025" data-resource-optimizations="true">
+  <script>
+   dataLayer = [{ 'schoolDomain': 'www.monroe.wednet.edu' }];
+				dataLayer.push({'uaID': 'UA-91548328-1' });
+  </script>
+  <noscript>
+   <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-P3BGC7" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P3BGC7');
+  </script>
+  <div id="fsPageWrapper">
+   <div id="fsMenu">
+    <div class="fsMenu fsStyleAutoclear" id="fsEl_493">
+     <div class="fsElement fsNavigation fsList nav-main" data-use-new="true" id="fsEl_1069">
+      <div class="fsElementContent">
+       <nav>
+        <ul class="fsNavLevel1">
+         <li>
+          <a href="/about">
+           About
+          </a>
+         </li>
+         <li>
+          <a href="/schools">
+           Schools
+          </a>
+         </li>
+         <li>
+          <a href="/academic-programs">
+           Academic Programs
+          </a>
+         </li>
+         <li>
+          <a href="/departments">
+           Departments
+          </a>
+         </li>
+         <li class="fsNavCurrentPageAncestor">
+          <a href="/community">
+           Community
+          </a>
+         </li>
+         <li>
+          <a href="/covid-19">
+           COVID-19
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="fsElement fsContainer district-mobile-area" data-use-new="true" id="fsEl_1070">
+      <div class="fsElementContent">
+       <div class="fsElement fsContent district-link" data-use-new="true" id="fsEl_1067">
+        <div class="fsElementContent">
+         <a class="district-title" data-page-name="Home" href="/fs/pages/2">
+          Monroe School District
+         </a>
+        </div>
+       </div>
+       <div class="fsElement fsSearch site-search fsSearchField" data-api-key="ODYyYzExY2JhYTZhYjhiNmNiM2MwNDA0YmRiYWU4NmI5MDY4NGI1NDNmMjQ2Yzc4NDhhMTU5NjBkNDI4MTUwZHJlc3RyaWN0U2VhcmNoYWJsZUF0dHJpYnV0ZXM9JTVCJTIyY29udGVudCUyMiUyQyUyMnRpdGxlJTIyJTVEJmZpbHRlcnM9ZG9tYWluX2lkKyUzRCsxMDg4K0FORCslMjhOT1QrcHVibGljJTNBZmFsc2UlMjkmdmFsaWRVbnRpbD0xNjA2NDk3MDgwJnJlc3RyaWN0SW5kaWNlcz1tb25yb2V3YV9wYWdlcw==" data-app-id="94N15DCPDQ" data-index="monroewa_pages" data-use-new="true" id="fsEl_1068">
+        <header>
+         <div class="fsElementHeaderContent">
+          <span id="search-anchor">
+          </span>
+         </div>
+        </header>
+        <div class="fsElementContent">
+         <div class="fsCustomSearch">
+          <div class="gsc-control-searchbox-only gsc-control-searchbox-only-en" dir="ltr">
+           <form accept-charset="utf-8" action="/search-results" class="gsc-search-box gsc-search-box-tools">
+            <table cellpadding="0" cellspacing="0" class="gsc-search-box">
+             <tbody>
+              <tr>
+               <td class="gsc-input">
+                <div class="gsc-input-box">
+                 <table cellpadding="0" cellspacing="0" style="width: 100%; padding: 0px;">
+                  <tbody>
+                   <tr>
+                    <td class="gsib_a">
+                     <input autocomplete="off" class="gsc-input" dir="ltr" name="q" size="10" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; outline: none;" title="search" type="text"/>
+                    </td>
+                    <td class="gsib_b">
+                     <div class="gsst_b" dir="ltr">
+                      <a class="gsst_a" href="javascript:void(0)">
+                       <span class="gscb_a">
+                        ×
+                       </span>
+                      </a>
+                     </div>
+                    </td>
+                   </tr>
+                  </tbody>
+                 </table>
+                </div>
+               </td>
+               <td class="gsc-search-button">
+                <input alt="Submit Search" class="gsc-search-button gsc-search-button-v2" src="/assets/icons/frontend/google_search_box_icon-76a0d76f135419f4d00213037cda0cba949a0372e01ab6a1d70072008a56bd18.png" title="search" type="image">
+                </input>
+               </td>
+               <td class="gsc-clear-button">
+                <div class="gsc-clear-button" title="clear results">
+                </div>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+            <table cellpadding="0" cellspacing="0" class="gsc-branding">
+            </table>
+           </form>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="fsElement fsNavigation fsList district-utility" data-use-new="true" id="fsEl_1065">
+        <div class="fsElementContent">
+         <nav>
+          <ul class="fsNavLevel1">
+           <li class="fsNavParentPage">
+            <a href="/families">
+             Families
+            </a>
+            <div class="fsNavPageInfo">
+             <ul class="fsNavLevel2">
+              <li>
+               <a href="/about/calendar" target="_blank">
+                Calendar
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://monroe.instructure.com/login/canvas">
+                Canvas (Observer)
+               </a>
+              </li>
+              <li>
+               <a href="/covid-19/support-for-families">
+                Distance Learning Support
+               </a>
+              </li>
+              <li>
+               <a href="/about/district-handbook">
+                District Handbook
+               </a>
+              </li>
+              <li>
+               <a href="https://www2.nwrdc.wa-k12.net/scripts/cgiip.exe/WService=wmonroes71/fwemnu01.w" target="_blank">
+                Family Access
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/departments/food-service/free-and-reduced-priced-meals" target="_blank">
+                Free &amp; Reduced Price Meals
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://monroewa.finalsite.com/uploaded/Forms/Interpreter-Translation_Request_wr_KR.pdf?1570560551086" target="_blank">
+                Interpreter and/or Translation
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://wa-monroe.intouchreceipting.com/" target="_blank">
+                Online Payments
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/staff-hub/departments/digital-learning/online-resources" target="_blank">
+                Online Resources &amp; Textbooks
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/families/peachjar">
+                Peachjar
+               </a>
+              </li>
+              <li>
+               <a href="/about/report-a-concern" target="_blank">
+                Report a Concern
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/departments/communications/text-messaging" target="_blank">
+                Text Messages
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/community/volunteer">
+                Volunteer
+               </a>
+              </li>
+             </ul>
+            </div>
+           </li>
+           <li class="fsNavParentPage">
+            <a href="/staff-hub" target="_blank">
+             Staff
+             <span class="fsStyleSROnly">
+              (opens in new window/tab)
+             </span>
+            </a>
+            <div class="fsNavPageInfo">
+             <ul class="fsNavLevel2">
+              <li>
+               <a href="https://xeponline.wa-k12.net/Account/LogOn?ReturnUrl=%2f" target="_blank">
+                IEP Online
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                Email Access
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="http://mpsportal.org/" target="_blank">
+                Employee Portal
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://login.schooldude.com/" target="_blank">
+                Facility Use
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://monroe.incidentiq.com/logout?referrer=%2Flogin" target="_blank">
+                Incident IQ
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/staff-hub/departments/digital-learning/online-resources" target="_blank">
+                Online Resources &amp; Textbooks
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://go.boarddocs.com/wa/mpswa/Board.nsf/Public#" target="_blank">
+                Policies &amp; Procedures
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://monroeprodev.hrmplus.net/" target="_blank">
+                Professional Development
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://app.readysub.com/account/login" target="_blank">
+                ReadySub
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://monroe-wa.safeschoolsalert.com/" target="_blank">
+                Safe Schools Alert
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://monroe-wa.safeschools.com/login" target="_blank">
+                Safe Schools Training
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://www2.nwrdc.wa-k12.net/scripts/cgiip.exe/WService=wmonroes71/seplog01.w" target="_blank">
+                Skyward
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/staff-hub">
+                Staff Hub
+               </a>
+              </li>
+              <li>
+               <a href="https://login.myschoolbuilding.com/msb" target="_blank">
+                Work Order
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+             </ul>
+            </div>
+           </li>
+           <li class="fsNavParentPage">
+            <a href="/students">
+             Students
+            </a>
+            <div class="fsNavPageInfo">
+             <ul class="fsNavLevel2">
+              <li>
+               <a href="/about/district-handbook">
+                District Handbook
+               </a>
+              </li>
+              <li>
+               <a href="https://monroe.instructure.com/" target="_blank">
+                Canvas
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="https://clever.com/oauth/authorize?response_type=code&amp;district_id=55b019413ca5be0100000200&amp;redirect_uri=https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&amp;client_id=4c63c1cf623dce82caac&amp;state=ba364aaf5e9bb2dd78cb5be5c9a6928593a3f806d7172c857e06a7e907f926f6" target="_blank">
+                Clever
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="http://destiny.monroe.wednet.edu/" target="_blank">
+                Library
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="http://monroeschools.nutrislice.com/" target="_blank">
+                Lunch Menu
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/staff-hub/departments/digital-learning/online-resources" target="_blank">
+                Online Resources
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+              <li>
+               <a href="/about/report-a-concern" target="_blank">
+                Report a Concern
+                <span class="fsStyleSROnly">
+                 (opens in new window/tab)
+                </span>
+               </a>
+              </li>
+             </ul>
+            </div>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <header class="fsHeader" id="fsHeader">
+    <div class="fsBanner fsStyleAutoclear" id="fsEl_7">
+     <div class="fsElement fsContent drawer-ribbon" data-use-new="true" id="fsEl_1062">
+      <div class="fsElementContent">
+       <span class="drawer-trigger">
+       </span>
+      </div>
+     </div>
+     <div class="fsElement fsContainer fixed-header" data-use-new="true" id="fsEl_1095">
+      <div class="fsElementContent">
+       <div class="fsElement fsContainer district-utility-bar" data-use-new="true" id="fsEl_811">
+        <div class="fsElementContent">
+         <div class="fsElement fsContent district-link" data-use-new="true" id="fsEl_826">
+          <div class="fsElementContent">
+           <a class="district-title" data-page-name="Home" href="/fs/pages/2">
+            Monroe School District
+           </a>
+          </div>
+         </div>
+         <div class="fsElement fsContent address-link" data-use-new="true" id="fsEl_2669">
+          <div class="fsElementContent">
+           <div>
+            <a href="https://www.google.com/maps/place/14692+179th+Ave+SE,+Monroe,+WA+98272/@47.864228,-121.9940251,17z/data=!3m1!4b1!4m5!3m4!1s0x549aa64e0db1ba8f:0xcd8be3d5d3671924!8m2!3d47.8642244!4d-121.9918364" target="_blank" title="Monroe School District Office">
+             14692 179th Avenue SE, Monroe WA 98272
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="fsElement fsEmbed utility-translate" data-use-new="true" id="fsEl_929">
+          <div class="fsElementContent">
+           <div id="google_translate_element">
+           </div>
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,es,hmn,ja,ko,ru,th,uk,vi,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+           </script>
+           <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+           </script>
+          </div>
+         </div>
+         <div class="fsElement fsNavigation fsList district-utility" data-use-new="true" id="fsEl_813">
+          <div class="fsElementContent">
+           <nav>
+            <ul class="fsNavLevel1">
+             <li class="fsNavParentPage">
+              <a href="/families">
+               Families
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/about/calendar" target="_blank">
+                  Calendar
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroe.instructure.com/login/canvas">
+                  Canvas (Observer)
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/support-for-families">
+                  Distance Learning Support
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/district-handbook">
+                  District Handbook
+                 </a>
+                </li>
+                <li>
+                 <a href="https://www2.nwrdc.wa-k12.net/scripts/cgiip.exe/WService=wmonroes71/fwemnu01.w" target="_blank">
+                  Family Access
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/food-service/free-and-reduced-priced-meals" target="_blank">
+                  Free &amp; Reduced Price Meals
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroewa.finalsite.com/uploaded/Forms/Interpreter-Translation_Request_wr_KR.pdf?1570560551086" target="_blank">
+                  Interpreter and/or Translation
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://wa-monroe.intouchreceipting.com/" target="_blank">
+                  Online Payments
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/staff-hub/departments/digital-learning/online-resources" target="_blank">
+                  Online Resources &amp; Textbooks
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/families/peachjar">
+                  Peachjar
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/report-a-concern" target="_blank">
+                  Report a Concern
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/communications/text-messaging" target="_blank">
+                  Text Messages
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/community/volunteer">
+                  Volunteer
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage">
+              <a href="/staff-hub" target="_blank">
+               Staff
+               <span class="fsStyleSROnly">
+                (opens in new window/tab)
+               </span>
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="https://xeponline.wa-k12.net/Account/LogOn?ReturnUrl=%2f" target="_blank">
+                  IEP Online
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                  Email Access
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="http://mpsportal.org/" target="_blank">
+                  Employee Portal
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://login.schooldude.com/" target="_blank">
+                  Facility Use
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroe.incidentiq.com/logout?referrer=%2Flogin" target="_blank">
+                  Incident IQ
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/staff-hub/departments/digital-learning/online-resources" target="_blank">
+                  Online Resources &amp; Textbooks
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://go.boarddocs.com/wa/mpswa/Board.nsf/Public#" target="_blank">
+                  Policies &amp; Procedures
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroeprodev.hrmplus.net/" target="_blank">
+                  Professional Development
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://app.readysub.com/account/login" target="_blank">
+                  ReadySub
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroe-wa.safeschoolsalert.com/" target="_blank">
+                  Safe Schools Alert
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroe-wa.safeschools.com/login" target="_blank">
+                  Safe Schools Training
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://www2.nwrdc.wa-k12.net/scripts/cgiip.exe/WService=wmonroes71/seplog01.w" target="_blank">
+                  Skyward
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/staff-hub">
+                  Staff Hub
+                 </a>
+                </li>
+                <li>
+                 <a href="https://login.myschoolbuilding.com/msb" target="_blank">
+                  Work Order
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage">
+              <a href="/students">
+               Students
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/about/district-handbook">
+                  District Handbook
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroe.instructure.com/" target="_blank">
+                  Canvas
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://clever.com/oauth/authorize?response_type=code&amp;district_id=55b019413ca5be0100000200&amp;redirect_uri=https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&amp;client_id=4c63c1cf623dce82caac&amp;state=ba364aaf5e9bb2dd78cb5be5c9a6928593a3f806d7172c857e06a7e907f926f6" target="_blank">
+                  Clever
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="http://destiny.monroe.wednet.edu/" target="_blank">
+                  Library
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="http://monroeschools.nutrislice.com/" target="_blank">
+                  Lunch Menu
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/staff-hub/departments/digital-learning/online-resources" target="_blank">
+                  Online Resources
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/report-a-concern" target="_blank">
+                  Report a Concern
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+         <div class="fsElement fsSearch site-search fsSearchField" data-api-key="ODYyYzExY2JhYTZhYjhiNmNiM2MwNDA0YmRiYWU4NmI5MDY4NGI1NDNmMjQ2Yzc4NDhhMTU5NjBkNDI4MTUwZHJlc3RyaWN0U2VhcmNoYWJsZUF0dHJpYnV0ZXM9JTVCJTIyY29udGVudCUyMiUyQyUyMnRpdGxlJTIyJTVEJmZpbHRlcnM9ZG9tYWluX2lkKyUzRCsxMDg4K0FORCslMjhOT1QrcHVibGljJTNBZmFsc2UlMjkmdmFsaWRVbnRpbD0xNjA2NDk3MDgwJnJlc3RyaWN0SW5kaWNlcz1tb25yb2V3YV9wYWdlcw==" data-app-id="94N15DCPDQ" data-index="monroewa_pages" data-use-new="true" id="fsEl_333">
+          <header>
+           <div class="fsElementHeaderContent">
+            <span id="search-anchor">
+            </span>
+           </div>
+          </header>
+          <div class="fsElementContent">
+           <div class="fsCustomSearch">
+            <div class="gsc-control-searchbox-only gsc-control-searchbox-only-en" dir="ltr">
+             <form accept-charset="utf-8" action="/search-results" class="gsc-search-box gsc-search-box-tools">
+              <table cellpadding="0" cellspacing="0" class="gsc-search-box">
+               <tbody>
+                <tr>
+                 <td class="gsc-input">
+                  <div class="gsc-input-box">
+                   <table cellpadding="0" cellspacing="0" style="width: 100%; padding: 0px;">
+                    <tbody>
+                     <tr>
+                      <td class="gsib_a">
+                       <input autocomplete="off" class="gsc-input" dir="ltr" name="q" size="10" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; outline: none;" title="search" type="text"/>
+                      </td>
+                      <td class="gsib_b">
+                       <div class="gsst_b" dir="ltr">
+                        <a class="gsst_a" href="javascript:void(0)">
+                         <span class="gscb_a">
+                          ×
+                         </span>
+                        </a>
+                       </div>
+                      </td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </div>
+                 </td>
+                 <td class="gsc-search-button">
+                  <input alt="Submit Search" class="gsc-search-button gsc-search-button-v2" src="/assets/icons/frontend/google_search_box_icon-76a0d76f135419f4d00213037cda0cba949a0372e01ab6a1d70072008a56bd18.png" title="search" type="image">
+                  </input>
+                 </td>
+                 <td class="gsc-clear-button">
+                  <div class="gsc-clear-button" title="clear results">
+                  </div>
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+              <table cellpadding="0" cellspacing="0" class="gsc-branding">
+              </table>
+             </form>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="fsElement fsContainer heading-bar" data-use-new="true" id="fsEl_812">
+        <div class="fsElementContent">
+         <div class="fsElement fsContent site-info-container" data-use-new="true" id="fsEl_69">
+          <div class="fsElementContent">
+           <h1>
+            <a href="/">
+             School Name
+            </a>
+           </h1>
+          </div>
+         </div>
+         <div class="fsElement fsNavigation fsList nav-main" data-use-new="true" id="fsEl_70">
+          <div class="fsElementContent">
+           <nav>
+            <ul class="fsNavLevel1">
+             <li class="fsNavParentPage">
+              <a href="/about">
+               About
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/departments/communications/publications">
+                  Annual Report
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/calendar">
+                  Calendar
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/district-handbook">
+                  District Handbook
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/district-leadership-team">
+                  District Leadership Team
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/news">
+                  News
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/official-notices">
+                  Official Notices
+                 </a>
+                </li>
+                <li>
+                 <a href="https://go.boarddocs.com/wa/mpswa/Board.nsf/Public#" target="_blank">
+                  Policies &amp; Procedures
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/register-for-school">
+                  Register for School
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/school-board">
+                  School Board
+                 </a>
+                </li>
+                <li>
+                 <a href="https://www.google.com/maps/d/u/0/viewer?ll=47.84837645090328%2C-122.002884&amp;spn=0.146109%2C0.282748&amp;t=m&amp;msa=0&amp;source=embed&amp;ie=UTF8&amp;mid=17-uc5wt5GZzMZZ5ME7KguBnrcjg&amp;z=12" target="_blank">
+                  School Boundaries
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/superintendent">
+                  Superintendent
+                 </a>
+                </li>
+                <li>
+                 <a href="/about/the-monroe-commitment">
+                  The Monroe Commitment
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage">
+              <a href="/schools">
+               Schools
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/chain-lake-elementary">
+                  Chain Lake Elementary
+                 </a>
+                </li>
+                <li>
+                 <a href="/fwe">
+                  Frank Wagner Elementary
+                 </a>
+                </li>
+                <li>
+                 <a href="/fre">
+                  Fryelands Elementary
+                 </a>
+                </li>
+                <li>
+                 <a href="/hrms">
+                  Hidden River Middle School
+                 </a>
+                </li>
+                <li>
+                 <a href="/lilhs">
+                  Leaders in Learning High School
+                 </a>
+                </li>
+                <li>
+                 <a href="/mbe">
+                  Maltby Elementary
+                 </a>
+                </li>
+                <li>
+                 <a href="/mhs">
+                  Monroe High School
+                 </a>
+                </li>
+                <li>
+                 <a href="/schools/monroe-virtual-learning-academy">
+                  Monroe Virtual Learning Academy (MVLA)
+                 </a>
+                </li>
+                <li>
+                 <a href="/ppms">
+                  Park Place Middle School
+                 </a>
+                </li>
+                <li>
+                 <a href="/swe">
+                  Salem Woods Elementary
+                 </a>
+                </li>
+                <li>
+                 <a href="/svec">
+                  Sky Valley Education Center
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage">
+              <a href="/academic-programs">
+               Academic Programs
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/academic-programs/career-technical-education">
+                  Career and Technical Education (CTE)
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/college-in-the-high-school">
+                  College in the High School
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/dual-language">
+                  Dual Language
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/early-learning">
+                  Early Learning
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/highly-capable">
+                  Highly Capable
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/honorsadvancedplacment">
+                  Honors &amp; Advanced Placement
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/montessori">
+                  Montessori-Based Program
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/running-start">
+                  Running Start
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/sno-isle-skills-center">
+                  Sno-Isle Skills Center
+                 </a>
+                </li>
+                <li>
+                 <a href="/academic-programs/summer-programs">
+                  Summer Programs
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage">
+              <a href="/departments">
+               Departments
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/departments/athletics">
+                  Athletics &amp; Activities
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/business-finance">
+                  Business &amp; Finance
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/communications">
+                  Communications
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/digital-learning">
+                  Digital Learning
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/facilities">
+                  Facilities
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/food-service">
+                  Food Service
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/health-services">
+                  Health Services
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/human-resources">
+                  Human Resources
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/learning-teaching">
+                  Learning &amp; Teaching
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/records">
+                  Records
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/safety-security">
+                  Safety &amp; Security
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/social-emotional-learning">
+                  Social Emotional Learning
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/special-education">
+                  Special Education
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/student-services">
+                  Student Services
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/transportation">
+                  Transportation
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage fsNavCurrentPageAncestor">
+              <a href="/community">
+               Community
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/community/cat-tracks-club">
+                  Cat Tracks Club
+                 </a>
+                </li>
+                <li class="fsNavCurrentPageAncestor">
+                 <a href="/community/committees">
+                  Committees
+                 </a>
+                </li>
+                <li>
+                 <a href="/community/community-education">
+                  Community Education
+                 </a>
+                </li>
+                <li>
+                 <a href="/departments/facilities/facility-use">
+                  Facility Use
+                 </a>
+                </li>
+                <li>
+                 <a href="/community/flyer-distribution">
+                  Flyer Distribution
+                 </a>
+                </li>
+                <li>
+                 <a href="https://www.monroepsf.org/" target="_blank">
+                  Monroe Schools Foundation
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/community/volunteer">
+                  Volunteer
+                 </a>
+                </li>
+                <li>
+                 <a href="/community/bonds-levies">
+                  Bonds &amp; Levies
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li class="fsNavParentPage">
+              <a href="/covid-19">
+               COVID-19
+              </a>
+              <div class="fsNavPageInfo">
+               <ul class="fsNavLevel2">
+                <li>
+                 <a href="/covid-19/attestations">
+                  Attestations
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/chromebooks-internet-access">
+                  Chromebooks &amp; Internet Access
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/community-resources">
+                  Community Resources
+                 </a>
+                </li>
+                <li>
+                 <a href="https://docs.google.com/spreadsheets/d/1f9JUdfnz8UFpksoLs-TlXaw2g7wl-Ju9vhYGNycMWgA/edit?usp=sharing" target="_blank">
+                  COVID-19 Activity Dashboard
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroewa.finalsite.com/uploaded/COVID-19/Local_Resources_for_COVID_Testing.pdf?1603404191921" target="_blank">
+                  COVID-19 Testing Sites
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/support-for-families">
+                  Distance Learning Support
+                 </a>
+                </li>
+                <li>
+                 <a href="https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/DecisionTree-K12schools.pdf" target="_blank">
+                  DOH Decision Tree
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/free-meal-program">
+                  Free Meal Program
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/frequently-asked-questions-faqs">
+                  Frequently Asked Questions (FAQs)
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/latest-updates">
+                  Latest Updates
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/learning-model-status">
+                  Learning Model Status
+                 </a>
+                </li>
+                <li>
+                 <a href="/community/committees/school-reopening-committee" target="_blank">
+                  Reopening Committee
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/safety-plans">
+                  Safety Plans
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/safe-return-plan">
+                  Safe Return Plan
+                 </a>
+                </li>
+                <li>
+                 <a href="https://monroewa.finalsite.com/uploaded/COVID-19/MSD_Student_Home_Screening_Flowchart.pdf?1603480296372" target="_blank">
+                  Student Screening Flowchart
+                  <span class="fsStyleSROnly">
+                   (opens in new window/tab)
+                  </span>
+                 </a>
+                </li>
+                <li>
+                 <a href="/covid-19/webinar-recordings">
+                  Webinar Recordings
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="fsElement fsNavigation fsList nav-sub" data-use-new="true" id="fsEl_1091">
+      <header>
+       <h2 class="fsElementTitle">
+        Sub Navigation
+       </h2>
+      </header>
+      <div class="fsElementContent">
+       <nav>
+       </nav>
+      </div>
+     </section>
+    </div>
+   </header>
+   <div class="fsPageBodyWrapper" id="fsPageBodyWrapper">
+    <div class="fsStyleAutoclear fsPageBody" id="fsPageBody">
+     <div class="fsBannerLeft" id="fsBannerLeft">
+      <div class="fsBanner fsStyleAutoclear" id="fsEl_2646">
+       <section class="fsElement fsNavigation fsList nav-sub" data-use-new="true" id="fsEl_3258">
+        <header>
+         <h2 class="fsElementTitle">
+          Sub Navigation
+         </h2>
+        </header>
+        <div class="fsElementContent">
+         <nav>
+          <ul class="fsNavLevel1">
+           <li>
+            <a href="/community/committees/instructional-materials-committee">
+             Instructional Materials Committee
+            </a>
+           </li>
+           <li class="fsNavCurrentPage">
+            <a href="/community/committees/school-reopening-committee">
+             School Reopening Committee
+            </a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </section>
+      </div>
+     </div>
+     <main class="fsPageContent" id="fsPageContent">
+      <h1 class="fsPageTitle">
+       School Reopening Committee
+      </h1>
+      <div class="fsPageLayout fsLayout fsOneColumnLayout fsStyleAutoclear" data-use-new="true" id="fsEl_11254">
+       <div class="fsDiv fsStyleAutoclear" id="fsEl_11255">
+        <div class="fsElement fsContent" data-use-new="true" id="fsEl_11256">
+         <div class="fsElementContent">
+          <h2>
+           Purpose of the Committee
+          </h2>
+          <p>
+           Our School Reopening Committee was a group of educators, union representatives, and community members tasked with reviewing the
+           <a href="https://www.k12.wa.us/sites/default/files/public/workgroups/Reopening%20Washington%20Schools%202020%20Planning%20Guide.pdf" target="_blank" title="Reopening Washington Schools 2020 - District Planning Guide">
+            Reopening Washington Schools 2020 - District Planning Guide
+           </a>
+           from OSPI and working to formulate a school reopening plan specific to Monroe School District that best met the needs of our community while ensuring that mandatory health and safety requirements were met. The committee worked throughout June and July 2020 to make a recommendation to the school board, who was ultimately responsible for adopting a fall 2020 reopening plan through a board resolution.
+          </p>
+          <h2>
+           Meeting Agendas, Notes, and Handouts
+          </h2>
+          <h3>
+           June 18, 2020
+          </h3>
+          <ul style="margin-left: 40px;">
+           <li>
+            <a data-file-name="Agenda_-_Session_1.docx" href="/uploaded/Reopening_Committee/Agenda_-_Session_1.docx" target="_blank" title="Session 1 Agenda">
+             Agenda
+            </a>
+           </li>
+           <li>
+            <a href="https://docs.google.com/document/d/1VLdmnD1DuOc1uDqvyrGrxA6V1EcyjTssDqDwietpsyM/edit?usp=sharing" target="_blank" title="Meeting Notes - 6.18.20">
+             Meeting Notes
+            </a>
+           </li>
+           <li>
+            <a href="https://www.k12.wa.us/sites/default/files/public/workgroups/Reopening%20Washington%20Schools%202020%20Planning%20Guide.pdf" target="_blank" title="Reopening Washington Schools 2020 - District Planning Guide (OSPI)">
+             Reopening Washington Schools 2020 - District Planning Guide (OSPI)
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Highest_Aspirations.docx" href="/uploaded/Reopening_Committee/Highest_Aspirations.docx" target="_blank" title="Highest Aspiration Handout">
+             Highest Aspirations
+            </a>
+            - PDF Handout
+           </li>
+           <li>
+            <a data-file-name="Primary_Consideration_Exercise.docx" href="/uploaded/Reopening_Committee/Primary_Consideration_Exercise.docx" target="_blank" title="Primary Considerations Handout">
+             Primary Considerations
+            </a>
+            - PDF Handout
+           </li>
+           <li>
+            <a data-file-name="Touchstones_for_Our_Work.docx" href="/uploaded/Reopening_Committee/Touchstones_for_Our_Work.docx" target="_blank" title="Touchstones for our Work Handout">
+             Touchstones for our Work
+            </a>
+            - PDF Handout
+           </li>
+           <li>
+            <a data-file-name="Closing_Reflection.docx" href="/uploaded/Reopening_Committee/Closing_Reflection.docx" target="_blank" title="Closing Reflections Handout">
+             Closing Reflections
+            </a>
+            - PDF Handout
+           </li>
+           <li>
+            <a href="https://www.youtube.com/watch?v=KWI7kkiN3Q8&amp;feature=youtu.be" target="_blank" title="Video Recording of Meeting #1 on YouTube">
+             Video Recording of Meeting
+            </a>
+           </li>
+          </ul>
+          <h3>
+           June 25, 2020
+          </h3>
+          <ul style="margin-left: 40px;">
+           <li>
+            <a data-file-name="Agenda_-_Session_2_.pdf" href="/uploaded/Reopening_Committee/Agenda_-_Session_2_.pdf" target="_blank" title="Session 2 Agenda - June 25, 2020">
+             Agenda
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Re-Opening_Meeting_Minutes_062520_.pdf" href="/uploaded/Reopening_Committee/Re-Opening_Meeting_Minutes_062520_.pdf" target="_blank" title="Meeting Notes - June 25, 2020">
+             Meeting Notes
+            </a>
+           </li>
+           <li>
+            <a href="https://www.youtube.com/watch?v=WotQhMrVzZw" target="_blank" title="Video - Supt Reykdal answers questions about reopening schools in the fall">
+             Video -
+            </a>
+            <a data-saferedirecturl="https://www.google.com/url?q=https://www.youtube.com/watch?v%3DWotQhMrVzZw&amp;source=gmail&amp;ust=1593185444762000&amp;usg=AFQjCNFZsv2bmFkWezfCVXkk5qnEukHjDg" href="https://www.youtube.com/watch?v=WotQhMrVzZw" target="_blank">
+             Supt. Reykdal answers questions from the public about going back to school in the fall
+            </a>
+            <a href="https://www.youtube.com/watch?v=WotQhMrVzZw" target="_blank" title="Video - Supt Reykdal answers questions about reopening schools in the fall">
+            </a>
+           </li>
+           <li>
+            <a href="https://www.k12.wa.us/sites/default/files/public/communications/Reopening%20Washington%20Schools%20FAQ%20for%20School%20Districts.pdf" target="_blank" title="Questions and Answers on Reopening Washington Schools From OSPI">
+             Reopening Washington Schools - Questions &amp; Answers for School Districts from OSPI
+            </a>
+           </li>
+           <li>
+            <a href="https://youtu.be/IMZypycUjro" target="_blank" title="Video Recording of Meeting #2 on YouTube">
+             Video Recording of Meeting
+            </a>
+           </li>
+          </ul>
+          <h3>
+           July 1, 2020
+          </h3>
+          <ul style="margin-left: 40px;">
+           <li>
+            <a data-file-name="Agenda_-_Session_3_.pdf" href="/uploaded/Reopening_Committee/Agenda_-_Session_3_.pdf" target="_blank" title="Reopening Committee Meeting Agenda #3">
+             Agenda
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Primary_Considerations_V.1.pdf" href="/uploaded/Reopening_Committee/Primary_Considerations_V.1.pdf" target="_blank" title="Primary Considerations">
+             Primary Considerations
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Re-Opening_Meeting_Minutes_070120.pdf" href="/uploaded/Reopening_Committee/Re-Opening_Meeting_Minutes_070120.pdf" target="_blank" title="Meeting Notes from 7-1-20">
+             Meeting Notes
+            </a>
+           </li>
+           <li>
+            <a data-file-name="_FINAL_20-21_Opening_of_Schools_Briefing_Paper_(1).pdf" href="/uploaded/Reopening_Committee/_FINAL_20-21_Opening_of_Schools_Briefing_Paper_(1).pdf" target="_blank" title="School Reopening Options Briefing Paper">
+             School Reopening Options Briefing Paper
+            </a>
+           </li>
+           <li>
+            <a href="https://youtu.be/8DR2Z4JnGZU" target="_blank" title="Video Recording of Meeting #3 on YouTube">
+             Video Recording of Meeting
+            </a>
+           </li>
+          </ul>
+          <h3>
+           July 16, 2020
+          </h3>
+          <ul style="margin-left: 40px;">
+           <li>
+            <a data-file-name="Agenda_-_Session_4_.pdf" href="/uploaded/Reopening_Committee/Agenda_-_Session_4_.pdf" target="_blank" title="Session 4 Agenda - July 16, 2020">
+             Agenda
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Opening_Schools_Meeting_7-16-2020.pdf" href="/uploaded/Reopening_Committee/Opening_Schools_Meeting_7-16-2020.pdf" target="_blank" title="School Reopening Option B1 - Pros/Challenges">
+             School Reopening Hybrid Option - Pros/Challenges
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Reopening_Meeting_Notes_071620.pdf" href="/uploaded/Reopening_Committee/Reopening_Meeting_Notes_071620.pdf" target="_blank" title="Reopening Committee Meeting Notes - 7.16.20">
+             Meeting Notes
+            </a>
+           </li>
+           <li>
+            <a href="https://youtu.be/4S1SixoIuAA" target="_blank" title="Video Recording of Meeting on YouTube">
+             Video Recording of Meeting
+            </a>
+           </li>
+          </ul>
+          <h3>
+           July 23, 2020
+          </h3>
+          <ul style="margin-left: 40px;">
+           <li>
+            <a data-file-name="Agenda_-_Session_5.pdf" href="/uploaded/Reopening_Committee/Agenda_-_Session_5.pdf" target="_blank" title="Reopening Committee Meeting Agenda #5">
+             Agenda
+            </a>
+           </li>
+           <li>
+            <a href="https://monroewa.finalsite.com/uploaded/Reopening_Committee/Re-Opening_Meeting_Minutes_072320.pdf?1596150029415" target="_blank" title="link to notes from 72320">
+             Meeting Notes
+            </a>
+           </li>
+           <li>
+            <a data-file-name="Letter_Survey_for_Families_on_Learning_Models_for_Fall_2020.pdf" href="/uploaded/Reopening_Committee/Letter_Survey_for_Families_on_Learning_Models_for_Fall_2020.pdf" target="_blank" title="Letter &amp; Survey to MSD Families on Reopening Options">
+             Letter &amp; Survey to Families
+            </a>
+            (sent out on July 21. Survey closes an noon on 7/27)
+           </li>
+           <li>
+            <a data-file-name="School_Reopening_Family_Survey_as_of_July_23_at_11_30.pdf" href="/uploaded/Reopening_Committee/School_Reopening_Family_Survey_as_of_July_23_at_11_30.pdf" target="_blank" title="Survey Results So Far">
+             Survey Results So Far
+            </a>
+            (as of 11:30 a.m. 7/23/20)
+           </li>
+           <li>
+            <a href="https://youtu.be/jw3RU9aG_CY" target="_blank" title="link to video recording of meeting">
+             V
+            </a>
+            <a href="https://youtu.be/jjXrvFW8yUY" target="_blank" title="Video recording of meeting #5">
+             ideo Recording of Meeting
+            </a>
+           </li>
+          </ul>
+          <h3>
+           July 30, 2020
+          </h3>
+          <ul style="margin-left: 40px;">
+           <li>
+            <a href="https://monroewa.finalsite.com/uploaded/Reopening_Committee/Agenda_-_Session_6.pdf?1596150232014" target="_blank" title="link to week six agenda">
+             Agenda
+            </a>
+           </li>
+           <li>
+            <a href="https://monroewa.finalsite.com/uploaded/Reopening_Committee/Re-Opening_Meeting_Minutes_073020.pdf?1596474836868" target="_blank" title="link to re-opening committee meeting notes">
+             Meeting Notes
+            </a>
+           </li>
+           <li>
+            <a data-file-name="School_Reopening_Family_Survey_-_Final_Results.pdf" href="/uploaded/Reopening_Committee/School_Reopening_Family_Survey_-_Final_Results.pdf" target="_blank" title="link to school reopening committee survey results">
+             Final Survey Results
+            </a>
+            (closed 7/27/20 at noon)
+           </li>
+           <li>
+            <a href="https://youtu.be/Pb7NbRa7B5w" target="_blank" title="link to week #6 meeting">
+             Video Recording of Meeting
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </main>
+    </div>
+   </div>
+   <footer class="fsFooter" id="fsFooter">
+    <div class="fsBanner test-banner fsStyleAutoclear" id="fsEl_9">
+     <div class="fsElement fsContainer footer-contact" data-use-new="true" id="fsEl_701">
+      <div class="fsElementContent">
+       <section class="fsElement fsContent school-details-container" data-use-new="true" id="fsEl_703">
+        <header>
+         <h2 class="fsElementTitle">
+          Monroe School District
+         </h2>
+        </header>
+        <div class="fsElementContent">
+         <div class="school-details" itemtype="http://schema.org/EducationalOrganization">
+          <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+           <span itemprop="streetAddress">
+            14692 179th Avenue SE,
+           </span>
+           <span itemprop="addressLocality">
+            Monroe
+           </span>
+           ,
+           <span itemprop="addressRegion">
+            WA
+           </span>
+           <span itemprop="postalCode">
+            98272
+           </span>
+          </div>
+          <div itemprop="telephone">
+           Phone: 360-804-2500
+          </div>
+          <div itemprop="fax">
+           Fax: 360-804-2529
+          </div>
+          <div itemprop="fax">
+           Office Hours: M-F 8:00 a.m. to 4:30 p.m.
+          </div>
+         </div>
+        </div>
+       </section>
+       <div class="fsElement fsNavigation fsList nav-social" data-use-new="true" id="fsEl_707">
+        <div class="fsElementContent">
+         <nav>
+          <ul class="fsNavLevel1">
+           <li>
+            <a href="http://www.facebook.com/monroewaschools" target="_blank">
+             Facebook
+             <span class="fsStyleSROnly">
+              (opens in new window/tab)
+             </span>
+            </a>
+           </li>
+           <li>
+            <a href="http://www.twitter.com/monroewaschools" target="_blank">
+             Twitter
+             <span class="fsStyleSROnly">
+              (opens in new window/tab)
+             </span>
+            </a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="fsElement fsContent stances" data-use-new="true" id="fsEl_9354">
+      <div class="fsElementContent">
+       <p>
+        <a data-page-name="Notice of Non-Discrimination" href="/fs/pages/487" title="Notice of Non-Discrimination">
+         Notice of Non-Discrimination
+        </a>
+       </p>
+       <p>
+        <a data-page-name="Website Accessibility" href="/fs/pages/1137" title="Website Accessibility">
+         Website Accessibility
+        </a>
+       </p>
+      </div>
+     </div>
+     <div class="fsElement fsContainer footer-mission" data-use-new="true" id="fsEl_9341">
+      <div class="fsElementContent">
+       <div class="fsElement fsContent peachjar" data-use-new="true" id="fsEl_9342">
+        <div class="fsElementContent">
+         <div>
+          <a href="https://app.peachjar.com/flyers/all/districts/3047/" target="_blank" title="Peachjar - Monroe School District">
+           <img alt="Peachjar" id="" src="/uploaded/themes/monroewa-theme/images/button-orange-peachjar_174x62.png" width="174"/>
+          </a>
+          <style type="text/css">
+           .peachjar {
+    text-align: unset;
+}
+.peachjar .fsElementContent {
+    text-align: right;
+}
+          </style>
+         </div>
+        </div>
+       </div>
+       <div class="fsElement fsContent" data-use-new="true" id="fsEl_9343">
+        <div class="fsElementContent">
+         <p style="text-align: right;">
+          Sign up to have our digital district #WeAreMSD
+          <br/>
+          newsletter delivered straight to your inbox
+          <br/>
+         </p>
+        </div>
+       </div>
+       <div class="fsElement fsForm footer-email" data-use-new="true" id="fsEl_9344">
+        <div class="fsElementContent">
+         <div class="fsFormContent">
+          <iframe frameborder="0" scrolling="yes" src="/cf_forms/view.cfm?formID=45&amp;composer_style=%2Fuploaded%2Fthemes%2Fmonroewa-theme%2Fjs%2Fform.js%7C%2Fuploaded%2Fthemes%2Fmonroewa-theme%2Fcss%2Fmain.css" title="Embedded Form - Form">
+          </iframe>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="fsPoweredByFinalsite" role="complementary">
+      <div>
+       <a href="https://www.finalsite.com/district" target="_blank" title="Powered by Finalsite opens in a new window">
+        Powered by Finalsite
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script src="/assets/application-251b7b76abf99b1aa6850ecc4681b7fa074a8a35bc041e4de365a3760c4d401c.js">
+  </script>
+  <script src="/uploaded/themes/monroewa-theme/js/main.js?1588619414">
+  </script>
+  <script>
+   if (typeof newrelic == 'object') {
+		newrelic.setCustomAttribute('tenant', 'monroewa');
+	}
+  </script>
+  <script type="text/javascript">
+   (function(){window['__CF$cv$params']={r:'5f8d1fde5d4839c6',m:'9f6ed7f6446f8c4911afa15b13189c39085c8976-1606493481-1800-AQUd54zqJPW5vale4qUzcxlbPu7dSSkk3Gppn7YqtYD9nFTkEOzbIJHHU83uPtz4Z4b/T5MZzPnB6CB9gdm3XqHWfeqMWCsZc4O21pmewhvLwvyu3d8GBhVerbcQ4Olt1rsOZKoVv8AjaeVWXmVw+gwetKWrKF4BqS5g+cIUrna3JBbAc0GUBboZP5YhaBJOMw==',s:[0xa3e2980bf1,0xbc1dbc5d7c],}})();
+  </script>
+ </body>
+</html>
