@@ -96,7 +96,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('root', help='root of documents after base')
     args = parser.parse_args()
-    th = TranscriptHandler('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
+    th = TranscriptHandler('/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
     # pth = '/home/olsonjr/SchoolBoard_20200616_0.txt'
     # db = DB()
     # t = Transcript(pth, db)

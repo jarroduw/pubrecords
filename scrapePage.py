@@ -30,6 +30,6 @@ for link in links:
         if r.status_code == 200:
             fName = os.path.basename(fullLink).replace("%20", " ")
             print(fName)
-            pathToWrite = ("/mnt/c/Users/jarro/Documents/MonroePubRecRequest/"+fName)
+            pathToWrite = ("/c/Users/jarro/Documents/MonroePubRecRequest/"+fName)
             with open(pathToWrite, 'wb') as fiOut:
                 fiOut.write(r.content)

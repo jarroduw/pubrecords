@@ -20,7 +20,7 @@ class DOCX(object):
         self.readInDoc()
         self.readText()
         self.handleDocInfo()
-        #self.writeToDB()
+        self.writeToDB()
 
     def readInDoc(self):
         logger.info("Reading in %s", self.finame)
@@ -47,7 +47,7 @@ class DOCX(object):
         self.writeToDB_doc()
         self.writeToDB_docx()##Meta
         self.writeToDB_textdata()##Actual text
-        self.writeToDB_pdftextdata()##text meta data
+        self.writeToDB_docxtextdata()##text meta data
         self.db.conn.commit()
 
     def writeToDB_doc(self):
@@ -62,7 +62,7 @@ class DOCX(object):
                 %s, %s, %s, %s, %s, %s, %s, %s
                 )
             RETURNING id;"""
-        self.db.cur.execute(query, (self.doc_id, self.author, self.created, self.modified, self.last_author, self.numEdits, self.numPara, self.numWords,))
+        self.db.cur.execute(query, (self.doc_id, self.author, self.created, self.modified, self.last_author, self.numEdits, self.numpara, self.numwords,))
         self.docx_id = self.db.cur.fetchone()[0]
 
     def writeToDB_textdata(self):
@@ -72,7 +72,7 @@ class DOCX(object):
 
     def writeToDB_docxtextdata(self):
         ##Should be a bulk insert
-        query = """INSERT INTO docxtextdata (textdata_id, para) VALUES (%s, %s);"""
+        query = """INSERT INTO docxtextdata (textdata_id, para_num) VALUES (%s, %s);"""
         query_get = """SELECT id FROM textdata WHERE doc_id=%s;"""
         self.db.cur.execute(query_get, (self.doc_id,))
         temp = self.db.cur.fetchall()
@@ -97,16 +97,16 @@ class DocxHandler(object):
             pth = Path(fi)
             st = os.stat(fi)
             mtime = datetime.datetime.fromtimestamp(st.st_mtime)
-            try:
-                DOCX(fi, db)
-                shutil.move(fi, self.folder + '/done/' + self.root + pth.name)
-            except:
-                print("ERROR")
-                shutil.move(fi, self.folder + '/issues/' + self.root + pth.name)
+            #try:
+            DOCX(fi, db)
+            shutil.move(fi, self.folder + '/done/' + self.root + pth.name)
+            #except:
+            #    print("ERROR")
+            #    shutil.move(fi, self.folder + '/issues/' + self.root + pth.name)
 
 if __name__=='__main__':
-#    d = DOCX('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/FromOtherRequests/Closing_Reflection.docx', {})
+#    d = DOCX('/c/Users/jarro/Documents/MonroePubRecRequest/FromOtherRequests/Closing_Reflection.docx', {})
     parser = argparse.ArgumentParser()
     parser.add_argument('root', help='root of documents after base')
     args = parser.parse_args()
-    ph = DocxHandler('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
+    ph = DocxHandler('/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)

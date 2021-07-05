@@ -109,13 +109,13 @@ class HtmlEmailHandler(object):
                 shutil.move(fi, self.folder + '/issues/' + self.root + pth.name)
 
 if __name__=='__main__':
-    #h = HtmlEmail('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/Request20-60-003/OSPI Bulletins Week of August 31-September 4.html', DB())
+    #h = HtmlEmail('/c/Users/jarro/Documents/MonroePubRecRequest/Request20-60-003/OSPI Bulletins Week of August 31-September 4.html', DB())
     parser = argparse.ArgumentParser()
     parser.add_argument('root', help='root of documents after base')
     args = parser.parse_args()
-    ph = HtmlEmailHandler('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
+    ph = HtmlEmailHandler('/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
     # db = DB()
     # pdf = PDF(
-    #     '/mnt/c/Users/jarro/Documents/MonroePubRecRequest/Budget Hearing Powerpoint.pdf',
+    #     '/c/Users/jarro/Documents/MonroePubRecRequest/Budget Hearing Powerpoint.pdf',
     #     db
     #     )

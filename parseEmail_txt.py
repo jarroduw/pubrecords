@@ -5,6 +5,7 @@ import csv
 import datetime
 from bs4 import BeautifulSoup
 import logging
+import psycopg2
 
 import shutil
 from pathlib import Path
@@ -94,25 +95,31 @@ class EmailHandler(object):
         db = DB()
         for fi in glob.glob(self.folder + self.root + "*.txt"):
             print(fi)
+            error_encountered = False
             pth = Path(fi)
             st = os.stat(fi)
             mtime = datetime.datetime.fromtimestamp(st.st_mtime)
             try:
                 Email(fi, db)
                 shutil.move(fi, self.folder + '/done/' + self.root + pth.name)
-            except:
-                print("ERROR")
-                return
+            except psycopg2.errors.ProgramLimitExceeded:
+                print("==> Exceeded tsvector maximum length")
+                error_encountered = True
+            except IndexError:
+                print("==> Index error in read_text")
+                error_encountered = True
+            if error_encountered:
                 shutil.move(fi, self.folder + '/issues/' + self.root + pth.name)
 
+
 if __name__=='__main__':
-    #h = Email('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/Request20-60-003/Re Invitation CLE Zoom Staff Meeting! @ Tue Mar 24, 2020 10am - 11am (PDT) (goodj@monroe.wednet.edu).txt', DB())
+    #h = Email('/c/Users/jarro/Documents/MonroePubRecRequest/Request20-60-003/Re Invitation CLE Zoom Staff Meeting! @ Tue Mar 24, 2020 10am - 11am (PDT) (goodj@monroe.wednet.edu).txt', DB())
     parser = argparse.ArgumentParser()
     parser.add_argument('root', help='root of documents after base')
     args = parser.parse_args()
-    ph = EmailHandler('/mnt/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
+    ph = EmailHandler('/c/Users/jarro/Documents/MonroePubRecRequest/', args.root)
     # db = DB()
     # pdf = PDF(
-    #     '/mnt/c/Users/jarro/Documents/MonroePubRecRequest/Budget Hearing Powerpoint.pdf',
+    #     '/c/Users/jarro/Documents/MonroePubRecRequest/Budget Hearing Powerpoint.pdf',
     #     db
     #     )
